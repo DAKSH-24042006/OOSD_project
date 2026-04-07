@@ -1,0 +1,4 @@
+roomId,type,price,status,floor,bedType,ac,wifi
+101,Single,100.0,Available,1,Single,Non-AC,Yes
+102,Double,150.0,Available,1,Double,AC,Yes
+103,Suite,250.0,Available,1,King,AC,Yes
