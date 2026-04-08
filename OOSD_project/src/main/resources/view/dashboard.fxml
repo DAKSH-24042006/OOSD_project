@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.DashboardController" fitToWidth="true" styleClass="main-container">
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
+    <VBox spacing="30" style="-fx-background-color: transparent;">
+        <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+        
+        <Label text="PERFORMANCE PIT WALL" styleClass="header-label" style="-fx-font-size: 32px;"/>
+        
+        <HBox spacing="20">
+            <VBox styleClass="form-pane" HBox.hgrow="ALWAYS" alignment="CENTER">
+                <Label text="Total Rooms" style="-fx-font-size: 16px;"/>
+                <Label fx:id="lblTotalRooms" text="--" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #ffd700;"/>
+            </VBox>
+            <VBox styleClass="form-pane" HBox.hgrow="ALWAYS" alignment="CENTER">
+                <Label text="Active Bookings" style="-fx-font-size: 16px;"/>
+                <Label fx:id="lblActiveBookings" text="--" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #74c0fc;"/>
+            </VBox>
+            <VBox styleClass="form-pane" HBox.hgrow="ALWAYS" alignment="CENTER">
+                <Label text="Total Revenue" style="-fx-font-size: 16px;"/>
+                <Label fx:id="lblTotalRevenue" text="--" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #dc1a22;"/>
+            </VBox>
+        </HBox>
+        
+        <HBox spacing="20" VBox.vgrow="ALWAYS">
+            <VBox styleClass="form-pane" HBox.hgrow="ALWAYS">
+                <Label text="Room Occupancy" styleClass="header-label" style="-fx-font-size: 18px;"/>
+                <PieChart fx:id="pieOccupancy" prefHeight="400"/>
+            </VBox>
+            <VBox styleClass="form-pane" HBox.hgrow="ALWAYS">
+                <Label text="Revenue Trends (Last 7 Days)" styleClass="header-label" style="-fx-font-size: 18px;"/>
+                <BarChart fx:id="barRevenue" prefHeight="400">
+                    <xAxis><CategoryAxis side="BOTTOM" label="Date"/></xAxis>
+                    <yAxis><NumberAxis side="LEFT" label="Amount ($)"/></yAxis>
+                </BarChart>
+            </VBox>
+        </HBox>
+    </VBox>
+</ScrollPane>

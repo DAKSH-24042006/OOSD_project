@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.CheckoutController">
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
+    <center>
+        <VBox spacing="20" alignment="CENTER" styleClass="form-pane" maxWidth="600" maxHeight="650">
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+            <Label text="Checkout &amp; Billing" styleClass="header-label"/>
+            
+            <GridPane hgap="15" vgap="15" alignment="CENTER">
+                <Label text="Select Booking:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <ComboBox fx:id="cmbBooking" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="250"/>
+
+                <Label text="Customer:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-weight: bold;"/>
+                <Label fx:id="lblCustomer" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Room:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-weight: bold;"/>
+                <Label fx:id="lblRoom" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="Total Days:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-font-weight: bold;"/>
+                <Label fx:id="lblDays" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Label text="Extra Charges:" GridPane.columnIndex="0" GridPane.rowIndex="4" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtExtra" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                <Label text="Discount (%):" GridPane.columnIndex="0" GridPane.rowIndex="5" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtDiscount" text="0" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                <Label text="Tax (18%):" GridPane.columnIndex="0" GridPane.rowIndex="6" style="-fx-font-weight: bold;"/>
+                <Label fx:id="lblTax" text="$0.00" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+                <Label text="Total Amount:" GridPane.columnIndex="0" GridPane.rowIndex="7" style="-fx-font-weight: bold;"/>
+                <Label fx:id="lblTotal" text="-" GridPane.columnIndex="1" GridPane.rowIndex="7" style="-fx-font-size: 22px; -fx-text-fill: #ffd700; -fx-font-weight: bold;"/>
+            </GridPane>
+            
+            <Button text="Complete Checkout" onAction="#handleCheckout" styleClass="action-button, checkout-btn" prefWidth="250">
+                <VBox.margin>
+                    <Insets top="20"/>
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </center>
+</BorderPane>

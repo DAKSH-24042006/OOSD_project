@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.BookingController">
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
+    <left>
+        <VBox spacing="10" alignment="TOP_CENTER" styleClass="form-pane">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="Reservations" styleClass="header-label"/>
+            
+            <GridPane hgap="10" vgap="10">
+                <Label text="Customer Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="txtCustName" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="txtCustPhone" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="txtCustEmail" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <TextField fx:id="txtCustAddress" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Label text="Room:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <ComboBox fx:id="cmbRoom" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                <Label text="Check In:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                <DatePicker fx:id="dpCheckIn" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                <Label text="Check Out:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                <DatePicker fx:id="dpCheckOut" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+                <Label text="Payment Status:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+                <ComboBox fx:id="cmbPaymentStatus" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+                <Label text="Payment Method:" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+                <ComboBox fx:id="cmbPaymentMethod" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+            </GridPane>
+            
+            <VBox spacing="10" alignment="CENTER">
+                <Button text="Save Booking" onAction="#handleSaveBooking" styleClass="action-button" prefWidth="180"/>
+                <Button text="Update Booking" onAction="#handleUpdateBooking" styleClass="action-button" prefWidth="180"/>
+                <Button text="Cancel Booking" onAction="#handleCancelBooking" styleClass="action-button" prefWidth="180"/>
+                <Button text="Clear" onAction="#handleClearForm" styleClass="action-button" prefWidth="180"/>
+            </VBox>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="10"/>
+            </padding>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Booking Dashboard" styleClass="header-label" style="-fx-font-size: 20px;"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <TextField fx:id="txtBookingSearch" promptText="Search bookings..." style="-fx-pref-width: 150;"/>
+                <DatePicker fx:id="dpFilterFrom" promptText="From" style="-fx-pref-width: 110;"/>
+                <DatePicker fx:id="dpFilterTo" promptText="To" style="-fx-pref-width: 110;"/>
+            </HBox>
+            <TableView fx:id="tableBookings" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colBookingId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colCustomer" text="Customer" prefWidth="120"/>
+                    <TableColumn fx:id="colRoom" text="Room" prefWidth="80"/>
+                    <TableColumn fx:id="colCheckIn" text="Check In" prefWidth="100"/>
+                    <TableColumn fx:id="colCheckOut" text="Check Out" prefWidth="100"/>
+                    <TableColumn fx:id="colBookingStatus" text="Status" prefWidth="100"/>
+                    <TableColumn fx:id="colPaymentStatus" text="Payment" prefWidth="90"/>
+                    <TableColumn fx:id="colPaymentMethod" text="Method" prefWidth="90"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
