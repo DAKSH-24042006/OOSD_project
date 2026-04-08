@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.RoomController">
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
+    <left>
+        <VBox spacing="10" alignment="TOP_CENTER" styleClass="form-pane">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="Add New Room" styleClass="header-label"/>
+            
+            <GridPane hgap="10" vgap="10">
+                <Label text="Room ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="txtRoomId" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <ComboBox fx:id="cmbType" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="txtPrice" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="Floor:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <TextField fx:id="txtFloor" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Label text="Bed Type:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <ComboBox fx:id="cmbBedType" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                <Label text="AC:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                <ComboBox fx:id="cmbAc" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                <Label text="WiFi:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                <ComboBox fx:id="cmbWifi" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+            </GridPane>
+            
+            <Button text="Add Room" onAction="#handleAddRoom" styleClass="action-button"/>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="10"/>
+            </padding>
+            <Label text="Rooms List" styleClass="header-label"/>
+            <TableView fx:id="tableRooms" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colRoomId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colType" text="Type" prefWidth="100"/>
+                    <TableColumn fx:id="colPrice" text="Price" prefWidth="80"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+                    <TableColumn fx:id="colFloor" text="Floor" prefWidth="60"/>
+                    <TableColumn fx:id="colBedType" text="Bed" prefWidth="80"/>
+                    <TableColumn fx:id="colAc" text="AC" prefWidth="60"/>
+                    <TableColumn fx:id="colWifi" text="WiFi" prefWidth="60"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
