@@ -1,0 +1,13 @@
+bookingId,customerId,roomId,checkIn,checkOut,paymentStatus,paymentMethod,status
+1,1,101,2026-04-08,2026-04-09,Partial,UPI,Cancelled
+2,1,101,2026-04-08,2026-04-09,Full,Card,Checked Out
+3,4,101,2026-04-09,2026-04-10,Full,UPI,Checked Out
+4,3,102,2026-04-10,2026-04-11,Partial,Cash,Checked Out
+5,1,101,2026-04-11,2026-04-13,Pending,UPI,Checked Out
+6,1,102,2026-04-09,2026-04-10,Full,UPI,Checked Out
+7,3,101,2026-04-17,2026-04-18,Partial,Cash,Checked Out
+8,1,101,2026-04-08,2026-04-09,Partial,UPI,Cancelled
+9,1,101,2026-04-08,2026-04-09,Full,Card,Checked Out
+10,2,102,2026-04-10,2026-04-12,Full,UPI,Checked Out
+11,6,101,2026-04-09,2026-04-10,Full,Cash,Checked Out
+12,4,105,2026-04-09,2026-04-18,Partial,UPI,Active
