@@ -1,3 +1,0 @@
-billId,bookingId,totalAmount,billDate,tax,discount,extraCharges
-1,2,118.0,2026-04-08,18.0,0.0,0.0
-2,3,168.15,2026-04-09,25.65,5.0,50.0
