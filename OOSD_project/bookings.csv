@@ -1,6 +1,0 @@
-bookingId,customerId,roomId,checkIn,checkOut,paymentStatus,paymentMethod,status
-1,1,101,2026-04-08,2026-04-09,Partial,UPI,Cancelled
-2,1,101,2026-04-08,2026-04-09,Full,Card,Checked Out
-3,4,101,2026-04-09,2026-04-10,Full,UPI,Active
-4,3,102,2026-04-10,2026-04-11,Partial,Cash,Active
-5,1,101,2026-04-11,2026-04-13,Pending,UPI,Active
